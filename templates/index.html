@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<font color="white">
+<h5 align="right">
+Piyush Maurya</h5>
+</font>
+<title>BMI CACULATOR </title></head>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' typr='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arino' rel='stylesheet' typr='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hindi:300' rel='stylesheet' typr='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' typr='text/css'>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}}">
+ <style>
+    /* CSS code for button */
+    body, html {
+  height: 100%;
+  margin: 0;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: red;
+  text-align:right;
+}
+
+    body {
+  background-image: url('../static/images/1.jpg');
+      background-repeat: no-repeat;
+      height:auto;
+      width:100%;
+      background-position:center;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+</style>
+</head>
+<body>
+
+
+
+
+<div class="login">
+</font>
+<center>
+<font color="white">
+<h1>BMI CALCULATOR</h1>
+</font>
+
+<form action="{{url_for('predict')}}"method="post">
+<font color="orange">
+<h1>Enter the details</h1>
+</font>
+<input type="text" name="height" placeholder="Height(cm)" required="required"/>
+<br>
+<br>
+<input type="text" name="weight" placeholder="Weight(kg)" required="required"/>
+<br>
+<br>
+<button type="submit" class ="btn btn-primary btn-block btn-large">Predict</button>
+<br>
+<br>
+<br>
+</form>
+<br>
+<h2>
+<font color="yellow">
+{{prediction_text}}
+</font>
+</h2>
+</div>
+</center><br><br>
+
+
+
+<font color="white">
+<ul>
+<li>If there is any Problem Please Refresh this Page  and then Enter the Correct Details:</li> 
+<br><br>
+<li>A BMI that is less than the 5th percentile is  considered underweight and above the 95th percentile is considered obese. Children with a BMI between the 85th percentile and 95th percentile are considered to be overweighted.</li>
+<br>
+<br>
+<li>Recent Studies in Britain have indicated that females between the ages 12 and 16 have a higher BMI than males of  the same age by 1.0 kg/m² on average.</li>
+<br>
+<br>
+<li>BMIs under 20 and over 25 have been associated with higher all-causes mortality, with the risk increasing with distance from the 20–25 range.</li>
+</ul>
+</font>
+<br>
+<nbsp>
+<h2>&nbsp;&nbsp;&nbsp;BMI table for adults</h2>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the World Health Organization's (WHO) recommended body weight based on BMI values for adults. It is used for both men and women, age 18&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or older.
+<table border="1" bordercolor="black" align="center" width="400" height=50" cellspacing="0" >
+</p>
+
+<tr>
+<th height="50" rowspan="3">Category</th>
+<th colspan="2" height="50">BMI</th>
+</tr>
+<tr>
+</tr>
+<tr>
+<th>from</th>
+<th>to</th>
+</tr><br><br>
+
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+<td align="center">Extreme Weak </td>
+<td align="center"></td>
+<td align="center">16</td>
+</tr>
+
+
+<tr>
+<td align="center">Weak </td>
+<td align="center">16</td>
+<td align="center">18.5 </td>
+</tr>
+
+<tr>
+<td align="center">Normal</td>
+<td align="center">18.5 </td>
+<td align="center">25</td>
+</tr>
+
+<tr>
+<td align="center">Overweight </td>
+<td align="center">25</td>
+<td align="center">30</td>
+</tr>
+
+<tr>
+<td align="center">Obesity </td>
+<td align="center">30</td>
+<td align="center">35</td>
+</tr>
+
+
+<tr>
+<td align="center">Extreme Obeity</td>
+<td align="center">35</td>
+<td align="center"></td>
+</table>
+<br>
+
+
+<h2>&nbsp;&nbsp;&nbsp;BMI table for children and teens, age 2-20</h2>
+<table border="1" bordercolor="black" align="center" width="400" height=50" cellspacing="0" >
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Centers for Disease Control and Prevention (CDC) recommends BMI categorization for children and teens between age 2 and 20.
+</p>
+<tr>
+<th height="50" rowspan="3">Category</th>
+<th  height="50">Percentile Range</th>
+</tr>
+
+
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+<td align="center">Underweight</td>
+<td align="center"><5%</td>
+</tr>
+
+
+<tr>
+<td align="center">Healthy Weight</td>
+<td align="center">5%-85%</td>
+</tr>
+
+<tr>
+<td align="center">At risk of overweight</td>
+<td align="center">85%-95%</td>
+</tr>
+
+<tr>
+<td align="center">Overweight </td>
+<td align="center">>95%</td>
+</tr>
+
+</table>
+
+<h2>&nbsp;&nbsp;&nbsp;Risks associated with being overweight</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Being overweight increases the risk of a number of serious diseases and health conditions. Below is a list of said risks, according to the Centers for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disease Control and Prevention (CDC):
+<ul>
+<li>High blood pressure</li>
+<li>Higher levels of LDL cholesterol, which is widely considered "bad cholesterol," lower levels of HDL cholesterol, considered to be good cholesterol in moderation, and high levels of triglycerides</li>
+<li>Type II diabetes</li>
+<li>Coronary heart disease</li>
+<li>Stroke</li>
+<li>Gallbladder disease</li>
+<li>Osteoarthritis, a type of joint disease caused by breakdown of joint cartilage</li>
+<li>Sleep apnea and breathing problems</li>
+<li>Certain cancers (endometrial, breast, colon, kidney, gallbladder, liver)</li>
+<li>Low quality of life</li>
+<li>Mental illnesses such as clinical depression, anxiety, and others</li>
+<li>Body pains and difficulty with certain physical functions</li>
+<li>Generally, an increased risk of mortality compared to those with a healthy BMI</li>
+</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As can be seen from the list above, there are numerous negative, in some cases fatal, outcomes that may result from being overweight. Generally, a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;person should try to maintain a BMI below 25 kg/m2, but ideally should consult their doctor to determine whether or not they need to make any changes  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to their lifestyle in order to be healthier.</p>
+</p>
+<br>
+<h2>&nbsp;&nbsp;&nbsp;Risks associated with being underweight</h2>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Being underweight has its own associated risks, listed below:
+<ul>
+<li>Malnutrition, vitamin deficiencies, anemia (lowered ability to carry blood vessels)</li>
+<li>Osteoporosis, a disease that causes bone weakness, increasing the risk of breaking a bone</li>
+<li>A decrease in immune function</li>
+<li>Growth and development issues, particularly in children and teenagers</li>
+<li>Possible reproductive issues for women due to hormonal imbalances that can disrupt the menstrual cycle. Underweight women also have a higher chance of miscarriage in the first trimester</li>
+<li>Potential complications as a result of surgery</li>
+<li>Generally, an increased risk of mortality compared to those with a healthy BMI</li>
+</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In some cases, being underweight can be a sign of some underlying condition or disease such as anorexia nervosa, which has its own risks. Consult &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your doctor if you think you or someone you know is underweight, particularly if the reason for being underweight does not seem obvious.
+</p> 
+<br>
+<font color="blue">
+<h1>
+&nbsp; &nbsp;&nbsp; &nbsp;Piyush Maurya<br>
+</h1>
+ &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;7985445887
+<br>
+<br>
+<br>
+</body>
+
+</html>  
+ 
